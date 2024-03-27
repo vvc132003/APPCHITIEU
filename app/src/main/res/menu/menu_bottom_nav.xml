@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/itHome"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itUser"
+        android:icon="@drawable/baseline_person_24"
+        android:title="User"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itFavorite"
+        android:icon="@drawable/baseline_currency_exchange_24"
+        android:title="Currency"
+        app:showAsAction="ifRoom" />
+</menu>

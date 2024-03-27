@@ -1,6 +1,9 @@
 package org.chinh.appquanlychitieu;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +35,15 @@ public class ProductActivity extends AppCompatActivity implements IProductConstr
         mPresenter = new ProductPresenter(this);
         mPresenter.setView(this);
         mPresenter.loadHotProducts();
+        Button buttonGoToAnotherActivity = findViewById(R.id.button_add_product);
+        buttonGoToAnotherActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển đến Activity khác
+                Intent intent = new Intent(ProductActivity.this, AddProductActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

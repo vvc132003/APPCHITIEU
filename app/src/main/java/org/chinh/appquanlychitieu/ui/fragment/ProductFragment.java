@@ -37,8 +37,11 @@ public class ProductFragment extends BaseFragment implements IProductConstract.I
 
     private void initGUI(View root) {
         rvHotProducts = root.findViewById(R.id.recycler_view);
+        rvNewProducts = root.findViewById(R.id.recycler_view_new_products);
         rvHotProducts.setLayoutManager(new LinearLayoutManager(getContext()));
+        rvNewProducts.setLayoutManager(new LinearLayoutManager(getContext()));
     }
+
 
     private void initData() {
 
