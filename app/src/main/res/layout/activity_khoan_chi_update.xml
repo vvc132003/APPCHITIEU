@@ -1,0 +1,38 @@
+<!-- activity_khoan_chi_update.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editTextSoTienChi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số Tiền Chi"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextTenKhoanChi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên Khoản Chi" />
+
+    <EditText
+        android:id="@+id/editTextMoTa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mô Tả" />
+
+    <Button
+        android:id="@+id/buttonUpdateKhoanChi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cập Nhật" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hủy Bỏ" />
+
+</LinearLayout>

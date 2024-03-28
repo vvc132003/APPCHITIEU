@@ -1,6 +1,7 @@
 package org.chinh.appquanlychitieu;
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import org.chinh.appquanlychitieu.data.AppDatabase;
+import org.chinh.appquanlychitieu.data.model.KhoanChi;
 import org.chinh.appquanlychitieu.data.model.Product;
 import org.chinh.appquanlychitieu.ui.constract.IProductConstract;
 import org.chinh.appquanlychitieu.ui.presenter.ProductPresenter;
@@ -18,6 +20,7 @@ import org.chinh.appquanlychitieu.ui.adapter.ProductAdapter;
 import org.chinh.appquanlychitieu.util.Constants;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ProductActivity extends AppCompatActivity implements IProductConstract.IView, IProductConstract.OnProductDeleteListener {
@@ -34,6 +37,12 @@ public class ProductActivity extends AppCompatActivity implements IProductConstr
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mPresenter = new ProductPresenter(this);
         mPresenter.setView(this);
+        AppDatabase db = Room.databaseBuilder(this,
+                AppDatabase.class, Constants.DB_NAME).allowMainThreadQueries().build();
+        List<KhoanChi> khoanChiList = new ArrayList<>();
+        khoanChiList.add(new KhoanChi(3, 20.99, "Product 3", "Description 3", new Date(), 120));
+        khoanChiList.add(new KhoanChi(4, 5.99, "Product 4", "Description 4", new Date(), 150));
+        khoanChiList.forEach(x -> db.khoanChiDao().insertKhoanChi(x));
         mPresenter.loadHotProducts();
         Button buttonGoToAnotherActivity = findViewById(R.id.button_add_product);
         buttonGoToAnotherActivity.setOnClickListener(new View.OnClickListener() {

@@ -80,7 +80,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         private ImageView mImageHero;
         private TextView mTextName;
         private TextView mTextPricer;
-        private Button buttonDelete;
+        private ImageView buttonDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

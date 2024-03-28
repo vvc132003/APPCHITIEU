@@ -1,66 +1,86 @@
 package org.chinh.appquanlychitieu.ui.fragment;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
+import org.chinh.appquanlychitieu.AddKhoanChiActivity;
+import org.chinh.appquanlychitieu.AddProductActivity;
+import org.chinh.appquanlychitieu.KhoanChi_updateActivity;
+import org.chinh.appquanlychitieu.ProductActivity;
 import org.chinh.appquanlychitieu.R;
+import org.chinh.appquanlychitieu.base.BaseFragment;
+import org.chinh.appquanlychitieu.data.model.KhoanChi;
+import org.chinh.appquanlychitieu.ui.adapter.KhoanChiAdapter;
+import org.chinh.appquanlychitieu.ui.constract.IKhoanChiConstract;
+import org.chinh.appquanlychitieu.ui.constract.IProductConstract;
+import org.chinh.appquanlychitieu.ui.presenter.KhoanChiPresenter;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentHome#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FragmentHome extends Fragment {
+import java.util.List;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+public class FragmentHome extends BaseFragment implements IKhoanChiConstract.IView, IKhoanChiConstract.OnKhoanChiDeleteListener{
+    private IKhoanChiConstract.IPresenter mPresenter;
+    private RecyclerView rvHotKhoanChi;
+    private RecyclerView rvNewProducts;
+    private RecyclerView rvCategories;
+    private List<KhoanChi> khoanChiList;
 
-    public FragmentHome() {
-        // Required empty public constructor
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        initGUI(root);
+        initData();
+        mPresenter = new KhoanChiPresenter(getContext());
+        mPresenter.setView(this);
+        ImageView addButton = root.findViewById(R.id.image_add_product);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), AddKhoanChiActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        return root;
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentHome.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentHome newInstance(String param1, String param2) {
-        FragmentHome fragment = new FragmentHome();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+
+    private void initGUI(View root) {
+        rvHotKhoanChi = root.findViewById(R.id.recycler_view);
+        rvHotKhoanChi.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    private void initData() {
+        mPresenter = new KhoanChiPresenter(getContext());
+        mPresenter.setView(this);
+        mPresenter.loadKhoanChi();
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public void onDeleteKhoanChiClicked(KhoanChi khoanChi) {
+        mPresenter.deleteKhoanchi(khoanChi);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+    public void setKhoanChiToUI(List<KhoanChi> khoanChiList) {
+        KhoanChiAdapter adapter = new KhoanChiAdapter(getContext(), khoanChiList, this);
+        rvHotKhoanChi.setAdapter(adapter);
     }
+
+
 }

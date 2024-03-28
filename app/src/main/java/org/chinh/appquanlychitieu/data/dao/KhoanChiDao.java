@@ -1,10 +1,13 @@
 package org.chinh.appquanlychitieu.data.dao;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import org.chinh.appquanlychitieu.data.model.KhoanChi;
+import org.chinh.appquanlychitieu.data.model.Product;
 
 import java.util.List;
 
@@ -16,4 +19,12 @@ public interface KhoanChiDao {
     @Insert
     void insertKhoanChi(KhoanChi khoanChi);
 
+    @Delete
+    void deleteKhoanChi(KhoanChi khoanChi);
+    @Update
+    void updateKhoanChi(KhoanChi khoanChi);
+
+    @Query("SELECT * FROM khoanchi WHERE id=:khoanChiID")
+    List<KhoanChi> getGetKhoanChibyID(int khoanChiID);
 }
+    
