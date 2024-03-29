@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Cậập Nhật Khoản Chi"
+            android:text="Cập Nhật Khoản Thu"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -32,14 +32,14 @@
             android:id="@+id/editTextSoTienChi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Số Tiền Chi"
+            android:hint="Số Tiền Thu"
             android:inputType="numberDecimal" />
 
         <EditText
             android:id="@+id/editTextTenKhoanChi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tên Khoản Chi" />
+            android:hint="Tên Khoản Thu" />
 
         <EditText
             android:id="@+id/editTextMoTa"
@@ -54,11 +54,11 @@
             android:gravity="end">
 
             <Button
-                android:id="@+id/buttonUpdateKhoanChi"
+                android:id="@+id/buttonUpdateKhoanThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:text="Cập Nhật" />
+                android:text="Cập Nhật"
+                android:layout_marginEnd="8dp" />
 
             <Button
                 android:id="@+id/buttonCancel"

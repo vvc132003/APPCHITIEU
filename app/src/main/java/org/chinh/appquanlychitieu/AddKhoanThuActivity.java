@@ -1,12 +1,5 @@
 package org.chinh.appquanlychitieu;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,19 +8,27 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
+
 import org.chinh.appquanlychitieu.data.model.KhoanChi;
-import org.chinh.appquanlychitieu.ui.adapter.KhoanChiAdapter;
+import org.chinh.appquanlychitieu.data.model.KhoanThu;
 import org.chinh.appquanlychitieu.ui.constract.IKhoanChiConstract;
-import org.chinh.appquanlychitieu.ui.constract.IProductConstract;
+import org.chinh.appquanlychitieu.ui.constract.IKhoanThuConstract;
 import org.chinh.appquanlychitieu.ui.fragment.FragmentHome;
 import org.chinh.appquanlychitieu.ui.fragment.FragmentKhoanThu;
 import org.chinh.appquanlychitieu.ui.presenter.KhoanChiPresenter;
+import org.chinh.appquanlychitieu.ui.presenter.KhoanThuPresenter;
 
 import java.util.Date;
 import java.util.List;
 
-public class AddKhoanChiActivity extends AppCompatActivity implements IKhoanChiConstract.IView {
-    private IKhoanChiConstract.IPresenter mPresenter;
+public class AddKhoanThuActivity extends AppCompatActivity implements IKhoanThuConstract.IView {
+    private IKhoanThuConstract.IPresenter mPresenter;
     private EditText editTextSoTienChi;
     private EditText editTextTenKhoanChi;
     private EditText editTextMoTa;
@@ -38,13 +39,13 @@ public class AddKhoanChiActivity extends AppCompatActivity implements IKhoanChiC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_khoan_chi);
+        setContentView(R.layout.activity_add_khoan_thu);
         editTextSoTienChi = findViewById(R.id.editTextSoTienChi);
         editTextTenKhoanChi = findViewById(R.id.editTextTenKhoanChi);
         editTextMoTa = findViewById(R.id.editTextMoTa);
         datePickerThoiGianChi = findViewById(R.id.datePickerThoiGianChi);
-        buttonAddKhoanChi = findViewById(R.id.buttonAddKhoanChi);
-        mPresenter = new KhoanChiPresenter(this);
+        buttonAddKhoanChi = findViewById(R.id.buttonAddKhoanThu);
+        mPresenter = new KhoanThuPresenter(this);
         mPresenter.setView(this);
         buttonAddKhoanChi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,8 +60,8 @@ public class AddKhoanChiActivity extends AppCompatActivity implements IKhoanChiC
                 int year = datePickerThoiGianChi.getYear();
                 Date thoigianchi = new Date(year, month, day);
                 // Gọi phương thức thêm khoản chi từ Presenter
-                mPresenter.AddKhoanChi(soTienChi, tenKhoanChi, moTa, new Date(), 1);
-                Intent intent = new Intent(AddKhoanChiActivity.this, FragmentHome.class);
+                mPresenter.AddKhoanThu(soTienChi, tenKhoanChi, moTa, new Date(), 1);
+                Intent intent = new Intent(AddKhoanThuActivity.this, FragmentKhoanThu.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +69,7 @@ public class AddKhoanChiActivity extends AppCompatActivity implements IKhoanChiC
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment = new FragmentHome();
+                Fragment fragment = new FragmentKhoanThu();
                 FragmentManager fragmentManager = ((FragmentActivity) v.getContext()).getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.container, fragment);
@@ -79,7 +80,7 @@ public class AddKhoanChiActivity extends AppCompatActivity implements IKhoanChiC
     }
 
     @Override
-    public void setKhoanChiToUI(List<KhoanChi> khoanChiList) {
+    public void setKhoanThuToUI(List<KhoanThu> khoanThuList) {
 //        KhoanChiAdapter adapter = new KhoanChiAdapter(getContext(), khoanChiList, this);
 //        rvHotKhoanChi.setAdapter(adapter);
     }

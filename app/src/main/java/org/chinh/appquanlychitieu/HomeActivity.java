@@ -18,6 +18,7 @@ import org.chinh.appquanlychitieu.ui.adapter.AdapterViewPager;
 import org.chinh.appquanlychitieu.ui.adapter.ProductAdapter;
 import org.chinh.appquanlychitieu.ui.constract.IProductConstract;
 import org.chinh.appquanlychitieu.ui.fragment.FragmentHome;
+import org.chinh.appquanlychitieu.ui.fragment.FragmentKhoanThu;
 import org.chinh.appquanlychitieu.ui.fragment.FragmentLoaiTienTe;
 import org.chinh.appquanlychitieu.ui.fragment.FragmentNguoiDung;
 import org.chinh.appquanlychitieu.ui.fragment.ProductFragment;
@@ -42,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements IProductConstract
         bottomNav = findViewById(R.id.bottomNav);
 
         fragmentArrayList.add(new FragmentHome());
-        fragmentArrayList.add(new ProductFragment());
+        fragmentArrayList.add(new FragmentKhoanThu());
         fragmentArrayList.add(new FragmentLoaiTienTe());
 
         AdapterViewPager adapterViewPager = new AdapterViewPager(this, fragmentArrayList);

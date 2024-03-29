@@ -4,6 +4,7 @@ public class Constants {
     public static String DB_NAME = "quanlychitieu.db";
     public static String PRODUCT_ID = "PRODUCT_ID";
     public static String khoanChiID = "khoanChiID";
+    public static  String khoanThuID = "khoanThuID";
 
     public enum LOGIN_STATUS {PASSWORD_ERROR, EMAIL_ERROR}
 

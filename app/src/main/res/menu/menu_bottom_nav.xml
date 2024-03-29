@@ -4,12 +4,12 @@
     <item
         android:id="@+id/itHome"
         android:icon="@drawable/baseline_home_24"
-        android:title="Home"
+        android:title="Khoản chi"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/itUser"
         android:icon="@drawable/baseline_person_24"
-        android:title="User"
+        android:title="Khoản thu"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/itFavorite"
