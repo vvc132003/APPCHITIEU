@@ -52,7 +52,11 @@ public class KhoanThuAdapter extends RecyclerView.Adapter<KhoanThuAdapter.ViewHo
     private String formatCurrency(double amount) {
         Locale vietnamLocale = new Locale("vi", "VN");
         NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(vietnamLocale);
-        return currencyFormatter.format(amount);
+        if (amount >= 0) {
+            return "+" + currencyFormatter.format(amount);
+        } else {
+            return currencyFormatter.format(amount);
+        }
     }
 
     @Override

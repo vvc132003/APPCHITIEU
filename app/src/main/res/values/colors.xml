@@ -3,6 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#FF5722</color>
-    <color name="greenColor">#007a33 </color> <!-- Màu xanh lá cây -->
+    <color name="greenColor">#007a33 </color>
 
 </resources>

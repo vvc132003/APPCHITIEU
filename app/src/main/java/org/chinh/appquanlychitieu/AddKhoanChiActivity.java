@@ -16,11 +16,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import org.chinh.appquanlychitieu.data.model.KhoanChi;
-import org.chinh.appquanlychitieu.ui.adapter.KhoanChiAdapter;
 import org.chinh.appquanlychitieu.ui.constract.IKhoanChiConstract;
-import org.chinh.appquanlychitieu.ui.constract.IProductConstract;
 import org.chinh.appquanlychitieu.ui.fragment.FragmentHome;
-import org.chinh.appquanlychitieu.ui.fragment.FragmentKhoanThu;
 import org.chinh.appquanlychitieu.ui.presenter.KhoanChiPresenter;
 
 import java.util.Date;

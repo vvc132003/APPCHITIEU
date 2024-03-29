@@ -2,7 +2,6 @@ package org.chinh.appquanlychitieu.ui.constract;
 
 
 import org.chinh.appquanlychitieu.data.model.KhoanChi;
-import org.chinh.appquanlychitieu.data.model.Product;
 
 import java.util.Date;
 import java.util.List;

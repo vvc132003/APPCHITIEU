@@ -7,7 +7,6 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import org.chinh.appquanlychitieu.data.model.KhoanChi;
-import org.chinh.appquanlychitieu.data.model.Product;
 
 import java.util.List;
 

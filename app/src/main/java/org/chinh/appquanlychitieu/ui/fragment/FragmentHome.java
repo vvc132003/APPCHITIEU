@@ -1,32 +1,24 @@
 package org.chinh.appquanlychitieu.ui.fragment;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import org.chinh.appquanlychitieu.AddKhoanChiActivity;
-import org.chinh.appquanlychitieu.AddProductActivity;
-import org.chinh.appquanlychitieu.KhoanChi_updateActivity;
-import org.chinh.appquanlychitieu.ProductActivity;
 import org.chinh.appquanlychitieu.R;
 import org.chinh.appquanlychitieu.base.BaseFragment;
 import org.chinh.appquanlychitieu.data.model.KhoanChi;
 import org.chinh.appquanlychitieu.ui.adapter.KhoanChiAdapter;
 import org.chinh.appquanlychitieu.ui.constract.IKhoanChiConstract;
-import org.chinh.appquanlychitieu.ui.constract.IProductConstract;
 import org.chinh.appquanlychitieu.ui.presenter.KhoanChiPresenter;
 
 import java.util.List;

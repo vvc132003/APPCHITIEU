@@ -26,21 +26,6 @@
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AddProductActivity"
-            android:exported="true" />
-        <activity
-            android:name=".item_product"
-            android:exported="false" />
-        <activity
-            android:name=".ProductActivity"
-            android:exported="true" />
-        <activity
-            android:name=".DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,14 +6,11 @@ import androidx.room.Room;
 
 import org.chinh.appquanlychitieu.data.AppDatabase;
 import org.chinh.appquanlychitieu.data.dao.KhoanChiDao;
-import org.chinh.appquanlychitieu.data.dao.ProductDao;
 import org.chinh.appquanlychitieu.data.model.KhoanChi;
 import org.chinh.appquanlychitieu.ui.constract.IKhoanChiConstract;
-import org.chinh.appquanlychitieu.ui.constract.IProductConstract;
 import org.chinh.appquanlychitieu.util.Constants;
 
 import java.util.Date;
-import java.util.List;
 
 public class KhoanChiPresenter implements IKhoanChiConstract.IPresenter {
     private IKhoanChiConstract.IView mView;

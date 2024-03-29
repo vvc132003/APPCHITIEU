@@ -48,8 +48,11 @@ public class KhoanChiAdapter extends RecyclerView.Adapter<KhoanChiAdapter.ViewHo
     private String formatCurrency(double amount) {
         Locale vietnamLocale = new Locale("vi", "VN");
         NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(vietnamLocale);
-        return currencyFormatter.format(amount);
-    }
+        if (amount >= 0) {
+            return "-" + currencyFormatter.format(amount);
+        } else {
+            return currencyFormatter.format(amount);
+        }    }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
