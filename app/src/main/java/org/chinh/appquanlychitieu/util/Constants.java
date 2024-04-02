@@ -1,7 +1,7 @@
 package org.chinh.appquanlychitieu.util;
 
 public class Constants {
-    public static String DB_NAME = "appquanlychitieu.db";
+    public static String DB_NAME = "appqlchitieu.db";
     public static String PRODUCT_ID = "PRODUCT_ID";
     public static String khoanChiID = "khoanChiID";
     public static  String khoanThuID = "khoanThuID";

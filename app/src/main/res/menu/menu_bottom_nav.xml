@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/itHome"
-        android:icon="@drawable/baseline_call_missed_outgoing_24"
-        android:title="Khoản chi"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/itUser"
         android:icon="@drawable/baseline_payment_24"
         android:title="Khoản thu"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itHome"
+        android:icon="@drawable/baseline_call_missed_outgoing_24"
+        android:title="Khoản chi"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/itFavorite"

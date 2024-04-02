@@ -39,7 +39,7 @@ public class AddKhoanChiActivity extends AppCompatActivity implements IKhoanChiC
         editTextSoTienChi = findViewById(R.id.editTextSoTienChi);
         editTextTenKhoanChi = findViewById(R.id.editTextTenKhoanChi);
         editTextMoTa = findViewById(R.id.editTextMoTa);
-        datePickerThoiGianChi = findViewById(R.id.datePickerThoiGianChi);
+//        datePickerThoiGianChi = findViewById(R.id.datePickerThoiGianChi);
         buttonAddKhoanChi = findViewById(R.id.buttonAddKhoanChi);
         mPresenter = new KhoanChiPresenter(this);
         mPresenter.setView(this);
@@ -51,14 +51,15 @@ public class AddKhoanChiActivity extends AppCompatActivity implements IKhoanChiC
                 String tenKhoanChi = editTextTenKhoanChi.getText().toString();
                 String moTa = editTextMoTa.getText().toString();
                 // Lấy ngày tháng năm từ DatePicker
-                int day = datePickerThoiGianChi.getDayOfMonth();
-                int month = datePickerThoiGianChi.getMonth();
-                int year = datePickerThoiGianChi.getYear();
-                Date thoigianchi = new Date(year, month, day);
+//                int day = datePickerThoiGianChi.getDayOfMonth();
+//                int month = datePickerThoiGianChi.getMonth();
+//                int year = datePickerThoiGianChi.getYear();
+//                Date thoigianchi = new Date(year, month, day);
                 // Gọi phương thức thêm khoản chi từ Presenter
                 mPresenter.AddKhoanChi(soTienChi, tenKhoanChi, moTa, new Date(), 1);
                 Intent intent = new Intent(AddKhoanChiActivity.this, FragmentHome.class);
                 startActivity(intent);
+
             }
         });
         ImageButton imageButton = findViewById(R.id.buttonBack);

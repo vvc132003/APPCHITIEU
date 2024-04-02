@@ -62,6 +62,8 @@ dependencies {
     // optional - Paging 3 Integration
     implementation ("androidx.room:room-paging:2.6.1")
 
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0") // Để chuyển đổi JSON
 
 
 

@@ -14,6 +14,7 @@ public interface IKhoanChiConstract {
     }
 
     interface IPresenter {
+
         void loadKhoanChi();
         void setView(IView view);
         void onAddButtonClick();

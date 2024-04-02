@@ -35,8 +35,8 @@ public class HomeActivity extends AppCompatActivity {
         pagerMain = findViewById(R.id.pagerMain);
         bottomNav = findViewById(R.id.bottomNav);
 
-        fragmentArrayList.add(new FragmentHome());
         fragmentArrayList.add(new FragmentKhoanThu());
+        fragmentArrayList.add(new FragmentHome());
         fragmentArrayList.add(new FragmentThongKe());
 
         AdapterViewPager adapterViewPager = new AdapterViewPager(this, fragmentArrayList);
@@ -46,10 +46,10 @@ public class HomeActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0:
-                        bottomNav.setSelectedItemId(R.id.itHome);
+                        bottomNav.setSelectedItemId(R.id.itUser);
                         break;
                     case 1:
-                        bottomNav.setSelectedItemId(R.id.itUser);
+                        bottomNav.setSelectedItemId(R.id.itHome);
                         break;
                     case 2:
                         bottomNav.setSelectedItemId(R.id.itFavorite);
@@ -62,9 +62,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int itemId = item.getItemId(); // Lấy ID của MenuItem
-                if (itemId == R.id.itHome) {
+                if (itemId == R.id.itUser) {
                     pagerMain.setCurrentItem(0);
-                } else if (itemId == R.id.itUser) {
+                } else if (itemId == R.id.itHome) {
                     pagerMain.setCurrentItem(1);
                 } else if (itemId == R.id.itFavorite) {
                     pagerMain.setCurrentItem(2);

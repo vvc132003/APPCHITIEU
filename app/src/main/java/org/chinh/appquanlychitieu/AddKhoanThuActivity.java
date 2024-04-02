@@ -55,10 +55,10 @@ public class AddKhoanThuActivity extends AppCompatActivity implements IKhoanThuC
                 String tenKhoanChi = editTextTenKhoanChi.getText().toString();
                 String moTa = editTextMoTa.getText().toString();
                 // Lấy ngày tháng năm từ DatePicker
-                int day = datePickerThoiGianChi.getDayOfMonth();
-                int month = datePickerThoiGianChi.getMonth();
-                int year = datePickerThoiGianChi.getYear();
-                Date thoigianchi = new Date(year, month, day);
+//                int day = datePickerThoiGianChi.getDayOfMonth();
+//                int month = datePickerThoiGianChi.getMonth();
+//                int year = datePickerThoiGianChi.getYear();
+//                Date thoigianchi = new Date(year, month, day);
                 // Gọi phương thức thêm khoản chi từ Presenter
                 mPresenter.AddKhoanThu(soTienChi, tenKhoanChi, moTa, new Date(), 1);
                 Intent intent = new Intent(AddKhoanThuActivity.this, FragmentKhoanThu.class);
